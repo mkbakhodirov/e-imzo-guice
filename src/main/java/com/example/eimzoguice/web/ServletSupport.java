@@ -13,6 +13,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 abstract class ServletSupport extends HttpServlet {
+    protected String routePath(HttpServletRequest request) {
+        return request.getRequestURI().substring(request.getContextPath().length());
+    }
+
     protected void forward(HttpServletRequest request, HttpServletResponse response, String path)
             throws ServletException, IOException {
         request.getRequestDispatcher(path).forward(request, response);
