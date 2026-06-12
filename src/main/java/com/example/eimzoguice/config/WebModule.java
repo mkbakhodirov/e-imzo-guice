@@ -9,8 +9,6 @@ import com.example.eimzoguice.web.DemoCabinetServlet;
 import com.example.eimzoguice.web.DemoIndexServlet;
 import com.example.eimzoguice.web.DemoRedirectServlet;
 import com.example.eimzoguice.web.DemoVerifyServlet;
-import com.example.eimzoguice.web.FrontendChallengeServlet;
-import com.example.eimzoguice.web.FrontendTimestampServlet;
 import com.google.gson.Gson;
 import com.google.inject.Scopes;
 import com.google.inject.servlet.ServletModule;
@@ -29,8 +27,6 @@ public class WebModule extends ServletModule {
         bind(BackendAuthServlet.class).in(Scopes.SINGLETON);
         bind(BackendVerifyAttachedServlet.class).in(Scopes.SINGLETON);
         bind(BackendVerifyDetachedServlet.class).in(Scopes.SINGLETON);
-        bind(FrontendChallengeServlet.class).in(Scopes.SINGLETON);
-        bind(FrontendTimestampServlet.class).in(Scopes.SINGLETON);
 
         serve("/demo").with(DemoRedirectServlet.class);
         serve("/demo/").with(DemoIndexServlet.class);
@@ -41,8 +37,5 @@ public class WebModule extends ServletModule {
         serve("/backend/auth").with(BackendAuthServlet.class);
         serve("/backend/pkcs7/verify/attached").with(BackendVerifyAttachedServlet.class);
         serve("/backend/pkcs7/verify/detached").with(BackendVerifyDetachedServlet.class);
-
-        serve("/frontend/challenge").with(FrontendChallengeServlet.class);
-        serve("/frontend/timestamp/pkcs7").with(FrontendTimestampServlet.class);
     }
 }
