@@ -28,13 +28,6 @@ abstract class ServletSupport extends HttpServlet {
         response.getWriter().write(gson.toJson(body));
     }
 
-    protected void text(HttpServletResponse response, int status, String body) throws IOException {
-        response.setStatus(status);
-        response.setCharacterEncoding(StandardCharsets.UTF_8.name());
-        response.setContentType("text/plain");
-        response.getWriter().write(body);
-    }
-
     protected void html(HttpServletResponse response, String path, Map<String, String> values) throws IOException {
         response.setCharacterEncoding(StandardCharsets.UTF_8.name());
         response.setContentType("text/html");

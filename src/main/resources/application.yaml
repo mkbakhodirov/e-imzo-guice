@@ -2,7 +2,5 @@ eimzo:
   rest:
     service:
       host:
-#        base: http://stg-bh-e-imzo-server-api.soliq.local
-#        challenger: https://stg-bh-backoffice.soliq.uz/frontend/challenge
         base: http://127.0.0.1:8080
         challenger: http://localhost/frontend/challenge

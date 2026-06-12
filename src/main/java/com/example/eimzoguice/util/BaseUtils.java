@@ -4,7 +4,6 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.Objects;
 
 public class BaseUtils {
     private static final String LOCALHOST_IPV4 = "127.0.0.1";
@@ -70,40 +69,5 @@ public class BaseUtils {
 
     public static boolean isEmpty(String value) {
         return value == null || value.isBlank();
-    }
-
-    public static String fromHexToDecimal(String serialNumber) {
-        return Long.valueOf(serialNumber, 16).toString();
-    }
-
-    public static String getClientIpAddress(HttpServletRequest req) {
-        String ipAddress = req.getHeader("x-real-ip");
-        if (isEmpty(ipAddress) || "unknown".equalsIgnoreCase(ipAddress)) {
-            ipAddress = req.getHeader("x-forwarded-for");
-        }
-        if (isEmpty(ipAddress) || "unknown".equalsIgnoreCase(ipAddress)) {
-            ipAddress = req.getHeader("proxy-client-ip");
-        }
-        if (isEmpty(ipAddress) || "unknown".equalsIgnoreCase(ipAddress)) {
-            ipAddress = req.getHeader("wl-proxy-client-ip");
-        }
-        if (isEmpty(ipAddress) || "unknown".equalsIgnoreCase(ipAddress)) {
-            ipAddress = req.getRemoteAddr();
-            if (LOCALHOST_IPV4.equals(ipAddress) || LOCALHOST_IPV6.equals(ipAddress)) {
-                try {
-                    ipAddress = InetAddress.getLocalHost().getHostAddress();
-                } catch (UnknownHostException e) {
-                    throw new IllegalStateException("Could not resolve local host address", e);
-                }
-            }
-        }
-        if (!isEmpty(ipAddress) && ipAddress.length() > 15 && ipAddress.indexOf(",") > 0) {
-            ipAddress = ipAddress.substring(0, ipAddress.indexOf(","));
-        }
-        return ipAddress;
-    }
-
-    public static boolean isNotEmpty(Object value) {
-        return Objects.nonNull(value);
     }
 }

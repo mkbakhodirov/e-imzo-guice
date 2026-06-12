@@ -46,7 +46,7 @@ Deploy `target/e-imzo-guice.war` to Tomcat 10+.
 
 ## Configuration
 
-Defaults are in `src/main/resources/application.properties`.
+Defaults are in `src/main/resources/application.yaml`.
 
 Values can be overridden with JVM system properties:
 
