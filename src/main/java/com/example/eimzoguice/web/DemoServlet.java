@@ -7,8 +7,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import uz.yt.eimzo.server.client.json.AuthJsonResponse;
-import uz.yt.eimzo.server.client.json.Pkcs7VerifyJsonResponse;
+import io.github.qo0p.eimzo.server.client.json.AuthJsonResponse;
+import io.github.qo0p.eimzo.server.client.json.Pkcs7VerifyJsonResponse;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;

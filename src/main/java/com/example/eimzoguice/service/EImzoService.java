@@ -5,10 +5,10 @@ import com.example.eimzoguice.util.BaseUtils;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import jakarta.servlet.http.HttpServletRequest;
-import uz.yt.eimzo.server.client.Client;
-import uz.yt.eimzo.server.client.http.HttpClient;
-import uz.yt.eimzo.server.client.json.AuthJsonResponse;
-import uz.yt.eimzo.server.client.json.Pkcs7VerifyJsonResponse;
+import io.github.qo0p.eimzo.server.client.Client;
+import io.github.qo0p.eimzo.server.client.http.HttpClient;
+import io.github.qo0p.eimzo.server.client.json.AuthJsonResponse;
+import io.github.qo0p.eimzo.server.client.json.Pkcs7VerifyJsonResponse;
 
 import java.net.MalformedURLException;
 import java.net.URL;
