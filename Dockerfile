@@ -5,7 +5,8 @@ COPY .mvn .mvn
 COPY mvnw pom.xml ./
 COPY src src
 
-RUN chmod +x mvnw \
+RUN sed -i 's/\r$//' mvnw \
+    && chmod +x mvnw \
     && ./mvnw -s .mvn/central-settings.xml clean package -DskipTests
 
 FROM jetty:11-jre17
