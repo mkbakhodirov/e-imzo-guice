@@ -6,8 +6,8 @@
 
 - Установлен и запущен Docker Desktop.
 - Порты `80`, `8080`, `8081` свободны.
-- На компьютере есть папка `C:\e-imzo-server`.
-- Внутри `C:\e-imzo-server` должны быть `keys` и `test-config.properties`.
+- На компьютере есть папка `C:\e-imzo-server` с файлами распакованные с zip файла (файл находится на телеграм канале E-IMZO Knowledge Base https://t.me/c/1649793225/59).
+- Внутри `C:\e-imzo-server` должны быть `keys` и `test-config.properties`. Обращайтесь к Замире опа @baxaabdu
 
 ## Что входит в проект
 
